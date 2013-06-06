@@ -10,11 +10,6 @@
 		color: black;
 	}
 	
-	.inactiveTab {
-		background: 0099FF;
-		color: black;
-	}
-	
 	.tabHover {
 		background: 00CCFF;
 		color: black;
@@ -29,13 +24,12 @@
 	
 	.activeTabContent {
 		position: relative;
-		visibility: visible;
+		display: block;
 	}
 	
 	.inactiveTabContent {
-		position: absolute;
-		visibility: hidden;
-		height: 100%;
+		position: relative;
+		display: none;
 	}
 	
 	.collapsedContent {
@@ -96,4 +90,60 @@
 	text-align:center;
 	margin-left:31%;
 	margin-right:31%;
+	}
+	
+	.activeTab,
+	.inactiveTab
+	{
+		cursor:pointer;
+	}
+	
+	.activeTab{
+	background-color:#0072BC;
+	}
+	
+	.inactiveTab{
+	background-color:#66ccff;
+	}
+	
+	.onHover{
+	background-color:#ff3300;
+	}
+	
+    #map-canvas {
+        margin: 10px auto 10px auto;
+        padding: 0;
+        height: 100px;
+		width:85%;
+      }
+
+	.jobRuler
+	{
+		height:1px; 
+		background-color:#CCCCCC; 
+		margin:0px 10px 20px 10px;
+	}
+	
+	.JobSeekerViewMainDiv
+	{
+		text-align:center;
+	}
+	.jobDescription
+	{
+		width: 460px;
+		margin: 0 auto 20px auto;
+	}
+	.JobRowDescription
+	{
+		width:165px;
+	}
+	.JobRowNumber
+	{
+		font-size:20px;
+		font-weight: bold;
+	}
+	
+	.jobsResultsIFRAME
+	{
+		overflow:hidden;
 	}

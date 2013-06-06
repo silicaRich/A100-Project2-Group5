@@ -17,6 +17,7 @@
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type="text/javascript">
+
 var geocoder;
 var map;
 function initialize() {
@@ -65,6 +66,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		}
 		);
 	
+	
+	
+
 	</script>
 <body>
    
@@ -75,7 +79,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 <div class="JobSeekerViewMainDiv">
-            <img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'>
+            <!--<img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'>-->
 				<?php 
 					$this->db->from("jobpostings");
 					$this->db->order_by("datePosted", "desc");

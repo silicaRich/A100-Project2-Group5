@@ -1,8 +1,9 @@
+
 <?php 
 
 	if (! defined('BASEPATH')) exit('No direct access allowed');
 
-	class LoginController extends CI_Controller {
+	class JobSeekerController extends CI_Controller {
 		
 		public function __construct() {
 			parent::__construct();
@@ -10,9 +11,9 @@
 		
 		function index() {
 
-			$this->load->view("loginView");
+			$this->load->view("JobSeekerView");
 			if (isset($_SESSION["username"])) {
-				redirect("loginview.php");
+				redirect("JobSeekerView.php");
 			}
 		}
 
@@ -57,24 +58,12 @@
 		function SubmitJobPosting() {
 			$query = $this->db->get("jobpostings");
 
-				if ($this->input->post("jobName") != null && 
-						$this->input->post("companyName") != null && 
-						$this->input->post("address") != null &&
-						$this->input->post("jobDescription") != null &&
-						$this->input->post("skillsRequired") != null && 
-						$this->input->post("other") != null && 
-						$this->input->post("contactEmail") != null && 
-						$this->input->post("companySite") != null) 
-						{
-							$new_row = array("jobName" => $this->input->post("jobName"), 
-							"companyName" => $this->input->post("companyName"), 
-							"address" => $this->input->post("address"), 
-							"datePosted" => date("Y-m-d H:i:s"), 
-							"jobDescription" => $this->input->post("jobDescription"), 
-							"skillsRequired" => $this->input->post("skillsRequired"), 
-							"other" => $this->input->post("other"), 
-							"contactEmail" => $this->input->post("contactEmail"), 
-							"companySite" => $this->input->post("companySite"));
+				if ($this->input->post("jobName") != null && $this->input->post("companyName") != null &&
+						$this->input->post("datePosted") != null && $this->input->post("jobDescription") != null &&
+						$this->input->post("skillsRequired") != null && $this->input->post("other") != null && $this->input->post("contactEmail") != null && $this->input->post("companySite") != null) {
+					$new_row = array("jobName" => $this->input->post("jobName"), "companyName" => $this->input->post("companyName"), "datePosted"
+							=> $this->input->post("datePosted"), "jobDescription" => $this->input->post("jobDescription"), "skillsRequired" =>
+							$this->input->post("skillsRequired"), "other" => $this->input->post("other"), "contactEmail" => $this->input->post("contactEmail"), "companySite" => $this->input->post("companySite"));
 					$this->db->insert("jobpostings", $new_row);
 					$jobposting_success = array("jobposting_success" => "Thank you! Your job posting was successfully submitted.");
 					$this->load->view("LoginView");

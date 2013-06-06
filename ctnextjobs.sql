@@ -55,7 +55,8 @@ INSERT INTO `employerlogin` (`employerID`, `username`, `password`, `contactEmail
 CREATE TABLE IF NOT EXISTS `jobpostings` (
   `jobName` text NOT NULL,
   `companyName` text NOT NULL,
-  `datePosted` date NOT NULL,
+  `datePosted` datettime NOT NULL,
+  `address` text NOT NULL,
   `jobDescription` text NOT NULL,
   `skillsRequired` text NOT NULL,
   `other` text NOT NULL,
@@ -68,24 +69,9 @@ CREATE TABLE IF NOT EXISTS `jobpostings` (
 --
 
 INSERT INTO `jobpostings` (`jobName`, `companyName`, `datePosted`, `jobDescription`, `skillsRequired`, `other`, `contactEmail`, `companySite`) VALUES
-('tom', 'tom''s coding company', '2011-12-30', 'web development', 'php', 'dedication', 'tson830@yahoo.com', 'www.google.com'),
-('tom', 'tom''s coding company', '2011-12-30', 'web development', 'php', 'dedication', 'tson830@yahoo.com', 'www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com'),
-('.', '.', '2012-11-30', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com');
+('tom', 'tom''s coding company', '2011-12-30', '760 chapel st, new haven, ct', 'web development', 'php', 'dedication', 'tson830@yahoo.com', 'www.google.com'),
+('tom', 'tom''s coding company', '2011-12-30', '1006 chapel st, new haven, ct', 'web development', 'php', 'dedication', 'tson830@yahoo.com', 'www.google.com'),
+('.', '.', '2012-11-30', '130 lane st, hamden, ct', '.', 'c++', 'has fun', 'tson830@yahoo.com', 'http:www.google.com');
 
 -- --------------------------------------------------------
 

@@ -5,6 +5,21 @@
 <head>
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/styles.css" rel="stylesheet">
+<script src="<?php echo base_url();?>static/js/jquery.min.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+	$('li>a').each(function() {
+			if($(this).attr('href') == '#jobs')
+				$(this).click(function() {
+					//$('#jobsResultsIFRAME').css("height", "" + $('#jobsResultsIFRAME').contents().find("body").height() + "px");
+					//alert($('#jobsResultsIFRAME').contents().height() + "px");
+				});
+		});
+		
+		
+	});
+</script>
 <style>
 	html, body, #map-canvas {
 		margin: 0;
@@ -47,9 +62,10 @@
               <li><a href="#map" data-toggle="tab"><i class="icon-globe"></i>Map</a></li>
               <li><a href="#social" data-toggle="tab"><i class="icon-thumbs-up"></i>Social</a></li>
               <li><a href="#feedback" data-toggle="tab"><i class="icon-envelope"></i>Feedback</a></li>
+              <li><a href="#jobs" data-toggle="tab"><i class="icon-pencil"></i>Jobs</a></li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane fade in active" id="home">
+              <div class="tab-pane fade in" id="home">
                 HOME ...  Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. 
               </div>            
               <div class="tab-pane fade in " id="map">
@@ -61,7 +77,12 @@
                 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 <!--/Twitter Feed--> 
               </div>
+			 <div class="tab-pane fade in " id="feedback">
             </div>
+			<div class="tab-pane fade in jobsIFrameContainer active"  id="jobs">
+				<iframe id="jobsResultsIFRAME" class="jobsResultsIFRAME" scrolling="yes" width="100%" height="100%" src="<?php echo base_url();?>index.php/JobSeekerController" frameborder="0"></iframe>
+			</div>
+			</div>
             <!-- Modal -->
             <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-header">
@@ -85,7 +106,7 @@
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script>
-      $('#myModal').modal(options);
+      //$('#myModal').modal(options);
     </script>
     <script>
         $(function () {
@@ -122,7 +143,6 @@
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
-	<script>
 	google.maps.visualRefresh = true;
   // Here we run a very simple test of the Graph API after login is successful. 
   // This testAPI() function is only called in those cases. 
@@ -132,25 +152,7 @@
       console.log('Good to see you, ' + response.name + '.');
     });
   }
+  }
 </script>
-}
-<script>
-google.maps.event.addDomListener(window, 'load', initialize);
-	pinAddress_func = null;
-	$(function() {
-		function pinAddress(){
-			var address=$('.address');
-			var addressInput=$('#address');
-			for(var i=address.length-1; i>=0; i--)
-			{
-				var addressText = address.eq(i).text();
-				addressInput.val(addressText);
-				codeAddress();
-			}
-		}
-		pinAddress_func = pinAddress;
-		}
-		);	
-	</script>
 </body>
 </html>

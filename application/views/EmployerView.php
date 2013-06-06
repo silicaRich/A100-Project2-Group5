@@ -12,6 +12,7 @@
 <div class="centerTabs" id="tabs" align="center">
 <div>
 		<div id="firstTabContent" class="activeTabContent">
+		<img src="<?php echo base_url();?>static/images/postajobbannerM.png"></img><br>
 		<?php 
 		if (isset($jobposting_success)) {
 			echo ("<p align=center>" . $jobposting_success . "</p>");
@@ -44,10 +45,10 @@
 					
 					echo ("<tr>\n");
 					echo ("<td>\n");
-					echo ("Date Posted:");
+					echo ("Address:");
 					echo ("</td>\n");
 					echo ("<td>\n");
-					echo (form_input(array("id" => "datePosted", "name" => "datePosted", "type" => "date")));
+					echo (form_input(array("id" => "address", "name" => "address", "type" => "text")));
 					echo ("</td>");
 					echo ("</tr>\n");
 					
