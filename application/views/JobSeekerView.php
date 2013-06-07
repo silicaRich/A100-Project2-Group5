@@ -1,6 +1,6 @@
 <?php
 
-	$this->load->helper("form");	
+	$this->load->helper("form");
 
 ?>
 <html>
@@ -12,7 +12,6 @@
 
 <title>Welcome Seeker!</title>
 </head>
-
 
 
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
@@ -65,13 +64,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		pinAddress_func = pinAddress;
 		}
 		);
-	
-	
-	
+
+
+
 
 	</script>
 <body>
-   
+
+
 <div id="panel">
       <input id="address" type="textbox" value="Sydney, NSW" style="display:none;">
       <input type="button" value="Geocode" onclick="codeAddress()" style="display:none;">
@@ -80,16 +80,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <div class="JobSeekerViewMainDiv">
             <!--<img src='http://newhiteboard.com/wp-content/uploads/2012/10/header.png'>-->
-				<?php 
+				<?php
 					$this->db->from("jobpostings");
 					$this->db->order_by("datePosted", "desc");
-					$query = $this->db->get(); 
+					$query = $this->db->get();
 					//$query = $this->db->get("jobpostings");
 					echo ("<h3>List of Job Postings On CT NextJobs</h3>");
 					echo ("<div id=\"map-canvas\"></div>");
 					echo ("<br/><br/><br/>");
 					if ($query->num_rows() > 0) {
-						for ($i = 0; $i < $query->num_rows(); $i++) 
+						for ($i = 0; $i < $query->num_rows(); $i++)
 						{
 							echo ("<table class=\"jobDescription\">");
 							echo ("<tr>\n");
