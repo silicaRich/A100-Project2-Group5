@@ -49,7 +49,40 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
+//javascript for submit feedback
+
+$(document).ready(function() {
+	var FeedBackInputItem = $('.FeedBackInputItem');
+	var FeedBackSubmit = $('.FeedBackSubmit');
+	FeedBackSubmit.click(function(event) {
+		var stopEvent = false;
+		var message = "";
+		FeedBackInputItem.each(function() {
+			if($(this).val() == null || $(this).val().trim() == "") {
+				stopEvent = true;
+				message = message + "\n*" + $(this).attr('placeholder');
+			}
+		});
+
+		if(stopEvent)
+		{
+			event.preventDefault();
+			alert('Please fill out all of the fields' + message);
+		}
+	});
+
+});
 
 
 
-
+$(document).ready(function() {
+	$('li > a').each(function() {
+		if($(this).attr('href') == "#jobs") {
+			$(this).click(function() {
+				 google.maps.event.trigger(map, 'resize');
+				 //map.setCenter(latlng);
+				 alert('resized');
+		 });
+		}
+	});
+});

@@ -116,6 +116,13 @@
         height: 200px;
 		width:85%;
       }
+	#map-canvas img { 
+	  max-width: none;
+	}
+
+	#map-canvas label { 
+	  width: auto; display:inline; 
+	} 
 
 	.jobRuler
 	{
@@ -147,3 +154,67 @@
 	{
 		overflow:hidden;
 	}
+	
+	.inputBox
+	{
+		height: 35px !important;
+	}
+	.signInBox
+	{
+		width: 150px;
+	}
+	.FeedBackInputName
+	{
+		width: 200px;
+	}
+	
+	.FeedBackInputEmail,
+	.FeedBackInputArea,
+	.FeedBackSubmit
+	{
+		width: 415px;
+	}
+	.FeedBackInputName,
+	.FeedBackInputEmail
+	{
+		margin-right: 15px;
+	}
+	
+	.FeedBackInputArea
+	{
+		height: 300px;
+	}
+	
+	.loggedInWelcome
+	{
+	font-family: 'Monoton', cursive;
+	}
+	.SignInBtn
+	{
+		width: 150px;
+	}
+	.CreateOneAnchor
+	{
+		width: 124px;
+	}
+	
+	.registrationTable
+	{
+		padding: 0 15px 0px 15px !important;
+	}
+	
+	.modal-body
+	{
+		padding-bottom:0px !important;
+		padding-left:0px !important;
+		padding-right:0px !important;
+	}
+	
+	.registrationDiv
+	{
+		overflow:auto;
+		height:298px;
+		padding-top: 10px;
+	}
+	
+	

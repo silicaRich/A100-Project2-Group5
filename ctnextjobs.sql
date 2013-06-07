@@ -94,6 +94,21 @@ CREATE TABLE IF NOT EXISTS `jobseeker` (
   PRIMARY KEY (`jobseekerID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+
+--
+--Table structure for table feedback
+--
+
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `firstName` text NOT NULL,
+  `lastName` text NOT NULL,
+  `email` text NOT NULL,
+  `postDate` datettime NOT NULL,
+  `comments` text NOT NULL,
+  `commentID` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`commentID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
 --
 -- Dumping data for table `jobseeker`
 --

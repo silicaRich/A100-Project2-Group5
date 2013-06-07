@@ -123,6 +123,31 @@
 			$this->load->view("LoginView");
 		}
 	}
+	
+	function SubmitComments() {
+	if($this->input->post("fName") != null && 
+		$this->input->post("lName") != null &&
+		$this->input->post("comments") != null &&
+		$this->input->post("email") != null) {
+			$fName = $this->input->post("fName");
+			$lName = $this->input->post("lName");
+			$comments = $this->input->post("comments");
+			$email = $this->input->post("email");
+			$commentDate = date("Y-m-d H:i:s");
+			$insert = array(
+			"firstName" => $fName, 
+			"lastName" => $lName, 
+			"email" => $email,
+			"postDate" => $commentDate,
+			"comments" => $comments);
+			$this->db->insert("feedback", $insert);
+			//$jobposting_success = array("feedback_success" => "Thank you! Your feedback was successfully submitted.");
+			$this->load->view("loginView");
+		}
+	}
+	
+	
+	
 	}
 
 ?>
