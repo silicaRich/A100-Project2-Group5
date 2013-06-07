@@ -98,7 +98,7 @@ function autoResize(id){
 									//$query = $this->db->get("jobpostings");
 									echo ("<input id=\"address\" type=\"textbox\" value=\"Sydney, NSW\" style=\"display:none;\">");
 									echo ("<h3>List of Job Postings On CT NextJobs</h3>");
-									echo ("<div id=\"map-canvas\"></div>");
+									echo ("<div id=\"map_canvas\"></div>");
 									echo ("<br/><br/><br/>");
 									if ($query->num_rows() > 0) {
 										for ($i = 0; $i < $query->num_rows(); $i++)
@@ -556,5 +556,15 @@ $(document).ready(function(){
         $('#myTab a:first').tab('show');
         })
     </script>
+	
+	
+	
+<ul class="unorderedList">
+ <li class="list"><a class="ahref">Privacy Policy</a></li>
+ <li class="list"><a class="ahref">Terms of Use</a></li>
+ <li class="list"><a class="ahref">Contact</a></li>
+</ul>
+	
+	
 </body>
 </html>

@@ -5,11 +5,11 @@ function initialize() {
   geocoder = new google.maps.Geocoder();
   var latlng = new google.maps.LatLng(41.3081, -72.9286);
   var mapOptions = {
-    zoom: 10,
+    zoom: 8,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
    google.maps.event.addListenerOnce(map, 'idle', function(){
     pinAddress_func();
 });
@@ -48,6 +48,13 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		);
 
 
+google.maps.event.addListener(map, "idle", function(){
+	google.maps.event.trigger(map, 'resize');
+
+});
+
+
+
 
 //javascript for submit feedback
 
@@ -76,12 +83,18 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+alert('hi');
 	$('li > a').each(function() {
-		if($(this).attr('href') == "#jobs") {
+		if($(this).attr('href') == "#jobs") {//
 			$(this).click(function() {
-				 google.maps.event.trigger(map, 'resize');
-				 //map.setCenter(latlng);
-				 alert('resized');
+			setTimeout(function() { 
+			alert('boo');
+				google.maps.event.trigger(map, "resize");
+				this.map.setZoom( this.map.getZoom() - 1);
+				this.map.setZoom( this.map.getZoom() + 1);
+				google.maps.event.trigger(map, 'resize');
+				}, 3000);
+
 		 });
 		}
 	});
