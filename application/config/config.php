@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/A100-Project2-Group5/';
+$config['base_url']	= 'http://nicole-pc/A100-Project2-Group5/';
 
 /*
 |--------------------------------------------------------------------------

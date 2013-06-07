@@ -6,20 +6,8 @@
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/styles.css" rel="stylesheet">
 <script src="<?php echo base_url();?>static/js/jquery.min.js"></script>
+<script src="<?php echo base_url();?>static/js/loginview.js"></script>
 
-	<script type="text/javascript">
-	$(document).ready(function() {
-	$('li>a').each(function() {
-			if($(this).attr('href') == '#jobs')
-				$(this).click(function() {
-					//$('#jobsResultsIFRAME').css("height", "" + $('#jobsResultsIFRAME').contents().find("body").height() + "px");
-					//alert($('#jobsResultsIFRAME').contents().height() + "px");
-				});
-		});
-		
-		
-	});
-</script>
 <style>
 	html, body, #map-canvas {
 		margin: 0;
